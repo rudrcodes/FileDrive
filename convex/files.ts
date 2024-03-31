@@ -14,13 +14,16 @@ export const hasAccessToOrg = async (
     orgId?: string) => {
 
     const identity = await ctx.auth.getUserIdentity();
-    console.log("identity in hasAccessToOrg",identity);
+    console.log("identity in hasAccessToOrg", identity);
     if (!identity) {
         return null
     }
     // const user = await getUser(ctx, identity.tokenIdentifier);
     const user = await ctx.db.query("users").withIndex("by_tokenIdentifier", (q) =>
         q.eq("tokenIdentifier", identity.tokenIdentifier)).first()
+
+    console.log("User: ", user)
+
     if (!user) {
         return null
     }
@@ -28,6 +31,7 @@ export const hasAccessToOrg = async (
     // This hasAccess var shows if the user has the right to create a file in that org
     const hasAccess = user.orgIds.some((item) => item.orgId === orgId) || user.tokenIdentifier.includes(orgId!);
 
+    console.log("hasAccess: ", hasAccess)
     if (!hasAccess) return null
 
     return { user }
