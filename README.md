@@ -1,3 +1,4 @@
+## Convex mein user create nhi ho rha h , bcoz of which files bhi create nhi ho paari hn
 ## Making this change here to refresh the deployment as after changing the env variables the production doesn't refresh by itself.
 ## Production mein: NEXT_PUBLIC_CONVEX_URL=> https://youthful-bandicoot-746.convex.cloud
 prod:youthful-bandicoot-746|01a544f20a4cc9cd001322a13ef94628441ac23ecdbaed8f8b5c071563517f0345494c032c9d4ecd2c3924b76f872a2fd5b524
