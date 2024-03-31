@@ -24,6 +24,7 @@ http.route({
 
             switch (result.type) {
                 case "user.created":
+                    console.log("User created webhook called")
                     await ctx.runMutation(internal.users.createUser, {
                         //result.data.id :  this is the user id
                         tokenIdentifier: `${process.env.CLERK_HOSTNAME}|${result.data.id}`,
