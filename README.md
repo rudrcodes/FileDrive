@@ -1,6 +1,6 @@
 ## Making this change here to refresh the deployment as after changing the env variables the production doesn't refresh by itself.
 ## Production mein: NEXT_PUBLIC_CONVEX_URL=> https://youthful-bandicoot-746.convex.cloud
-TODO : org membership.updated vala kaam nhi kr rha h , have to look into it
+
 
 ## Add-ons
 
