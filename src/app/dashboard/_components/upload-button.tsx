@@ -78,6 +78,18 @@ export const UploadButton = () => {
     async function onSubmit(values: z.infer<typeof formSchema>) {
         if (!orgId) return
 
+
+        let fileSupported = ['image/png', 'image/jpeg', 'application/pdf', 'text/csv'].includes(values.file[0].type)
+
+        if (fileSupported == false) {
+            toast({
+                variant: "destructive",
+                title: "File type not supported.",
+            })
+            return;
+        }
+
+
         // Step 1: Get a short-lived upload URL
         const postUrl = await generateUploadUrl();
         // Step 2: POST the file to the URL
@@ -95,6 +107,21 @@ export const UploadButton = () => {
             'text/csv': 'csv'
         } as Record<string, Doc<"files">["type"]>;
         console.log("File type :", values.file[0].type);
+
+        const objectKeys = Object.keys(types);
+        console.log(objectKeys);
+
+        //if the file uploded is not the type we accept we return file type not supported error
+        // let fileSupported = objectKeys.includes(values.file[0].type);
+
+        // if (fileSupported == false) {
+        //     toast({
+        //         variant: "destructive",
+        //         title: "File type not supported.",
+        //     })
+        //     return;
+        // }
+
         try {
             await createFile({
                 name: values.title,
@@ -111,6 +138,7 @@ export const UploadButton = () => {
                 description: "Now everyone can view your file"
             })
         } catch (error) {
+            console.log("Error in files:createFile : ", error)
             toast({
                 variant: "destructive",
                 title: "Error in uploading file.",
