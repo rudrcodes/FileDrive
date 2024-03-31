@@ -14,6 +14,7 @@ export const hasAccessToOrg = async (
     orgId?: string) => {
 
     const identity = await ctx.auth.getUserIdentity();
+    console.log("identity in hasAccessToOrg",identity);
     if (!identity) {
         return null
     }
