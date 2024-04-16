@@ -1,7 +1,7 @@
 ## Convex mein user create nhi ho rha h , bcoz of which files bhi create nhi ho paari hn
 ## Making this change here to refresh the deployment as after changing the env variables the production doesn't refresh by itself.
 ## Production mein: NEXT_PUBLIC_CONVEX_URL=> https://youthful-bandicoot-746.convex.cloud
-Changed Convex Prod key (CONVEX_DEPLOY_KEY):   prod:youthful-bandicoot-746|01def1cef410cae566eb7fe01acfae22af80751b89fe91a6e69f46c4e500353e8c8254f8887e5197631468d0f585824256fe43
+Changed Convex Prod key (CONVEX_DEPLOY_KEY):  prod:youthful-bandicoot-746|01def1cef410cae566eb7fe01acfae22af80751b89fe91a6e69f46c4e500353e8c8254f8887e5197631468d0f585824256fe43
 ## Add-ons
 
 add malware scanning, adult/cp content detection and also a summary of what files might be related to the current open file, This will really ramp up the value of this project from being a relatively "bare bones" crud to MADNESS
